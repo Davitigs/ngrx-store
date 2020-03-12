@@ -10,6 +10,12 @@ const initialState: BooksModel = {
 
 export function reducer(state: BooksModel[] = [initialState], action: BookActions.Actions) {
   switch (action.type) {
-
+    case BookActions.ADD_BOOK:
+      return [...state, action.payload];
+    case BookActions.REMOVE_BOOK:
+      state.splice(action.payload, 1);
+      return state;
+    default:
+      return state;
   }
 }

@@ -1,0 +1,10 @@
+
+<div>
+  <h3>Books</h3>
+
+  <ul>
+    <li (click)="removeBook(i)" *ngFor="let book of books | async; let i = index">
+      <a [href]="book.url" target="_blank">{{ book.name }}</a>
+    </li>
+  </ul>
+</div>
